@@ -25,6 +25,7 @@ public class QuizController {
             Integer newId = quizService.createQuiz(quizDto.getCategoryName(), quizDto.getNumQuestions(), quizDto.getTitle());
             return ResponseEntity.ok(newId);
         }catch(Exception e){
+            System.out.println(e.getMessage());
             throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "An unexpected error occurred", e);
         }
     }
